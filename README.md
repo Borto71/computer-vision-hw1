@@ -27,52 +27,6 @@ python Homework-1/main.py
 
 This reads the images in `img/`, creates the degraded versions and writes all the results and metrics.
 
-## File structure
-
-```
-.
-├── img/                  original images
-├── img_degraded/         degraded versions (generated)
-├── results/
-│   ├── enhanced/         methods applied to the degraded images
-│   ├── real/             methods applied to the real originals
-│   ├── figures/          comparison figures and histograms
-│   └── metrics.csv       PSNR, SSIM and MAE per image and method
-└── Homework-1/
-    ├── main.py           runs the complete pipeline
-    ├── data.py           image loading and degradation
-    ├── enhancement.py    enhancement methods
-    ├── metrics.py        PSNR, SSIM and MAE
-    ├── visualization.py  comparison figures and histograms
-    └── report/           PDF report and its figures
-```
-
-## Degradation parameters
-
-Set at the top of `Homework-1/main.py`:
-
-| Parameter | Value | Meaning |
-|---|---|---|
-| `SEED` | 42 | base seed, image `i` (alphabetical order) uses `SEED + i` |
-| `ALPHA` | 0.5 | contrast factor around the image mean |
-| `SIGMA` | 10.0 | standard deviation of the Gaussian noise, in grey levels |
-| `ILLUM_MIN` | 0.7 | brightness on the left border of the horizontal illumination ramp |
-| `MAX_SIDE` | 1024 | longest side after resizing |
-
-The original images are the reference for the metrics on the synthetic degradations. A clean reference may not be available in real-world scenarios.
-
-## Methods
-
-| Name | Description |
-|---|---|
-| `baseline` | degraded image, no processing |
-| `stretch_rgb` | linear stretching (1st to 99th percentile) per channel |
-| `stretch_lab` | linear stretching (1st to 99th percentile) on the L channel of CIE Lab |
-| `histeq_lab` | histogram equalization on the L channel of CIE Lab |
-| `nlm` | non-local means denoising |
-| `clahe` | CLAHE on the L channel |
-| `nlm_clahe` | non-local means denoising followed by CLAHE (fourth method) |
-
 ## Images
 
 | File | Source | Author | License |
