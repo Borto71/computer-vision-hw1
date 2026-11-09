@@ -10,12 +10,11 @@ No learning-based method is used.
 - numpy 2.4.6
 - opencv-python 5.0.0.93
 - matplotlib 3.11.2
-- reportlab 5.1.0 (only to rebuild the PDF report)
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-pip install numpy==2.4.6 opencv-python==5.0.0.93 matplotlib==3.11.2 reportlab==5.1.0
+pip install numpy==2.4.6 opencv-python==5.0.0.93 matplotlib==3.11.2
 ```
 
 ## Run
@@ -27,12 +26,6 @@ python Homework-1/main.py
 ```
 
 This reads the images in `img/`, creates the degraded versions and writes all the results and metrics.
-
-To rebuild the report after running the pipeline:
-
-```bash
-python Homework-1/report/build_report.py
-```
 
 ## File structure
 
@@ -51,7 +44,7 @@ python Homework-1/report/build_report.py
     ├── enhancement.py    enhancement methods
     ├── metrics.py        PSNR, SSIM and MAE
     ├── visualization.py  comparison figures and histograms
-    └── report/           report source, figures and PDF
+    └── report/           PDF report and its figures
 ```
 
 ## Degradation parameters
