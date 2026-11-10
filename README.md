@@ -27,6 +27,26 @@ python Homework-1/main.py
 
 This reads the images in `img/`, creates the degraded versions and writes all the results and metrics.
 
+## File structure
+
+```
+Homework-1/
+  main.py            runs the whole experiment
+  data.py            image loading and synthetic degradation
+  enhancement.py     enhancement methods
+  metrics.py         PSNR, SSIM, MAE
+  visualization.py   comparison, real-image and histogram figures
+  report/            report.pdf and its figures
+img/                 original images
+img_degraded/        degraded images
+results/
+  enhanced/          methods applied to the degraded images
+  real/              methods applied to the real originals
+  figures/           comparison figures and histograms
+  metrics.csv        metrics for each image and method
+requirements.txt     dependencies
+```
+
 ## Images
 
 | File | Source | Author | License |
